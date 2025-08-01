@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 능력고사 – 디지털커머스 지식왕전</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 회사 로고 -->
+    <div class="company-logo">
+        <img src="digitalwokrs.png" alt="DigitalWorks Logo">
+    </div>
+
+    <!-- 폭죽 효과 컨테이너 -->
+    <div id="fireworks-container" class="fireworks-container"></div>
+    
+    <!-- 별똥별 효과 컨테이너 -->
+    <div class="meteor-layer-1"></div>
+
+    <!-- 인트로 화면 -->
+    <div id="intro-screen" class="screen active">
+        <div class="container">
+            <h1 class="main-title">
+                <span class="title-line">AI 능력고사</span>
+                <span class="title-line subtitle">디지털커머스 지식왕전</span>
+            </h1>
+            <button id="start-exam-btn" class="btn primary">시험 응시하기</button>
+        </div>
+    </div>
+
+    <!-- 안내문구 화면 -->
+    <div id="instruction-screen" class="screen">
+        <div class="container">
+            <h2>시험 안내</h2>
+            <div class="instruction-box">
+                <ul>
+                    <li>🚫 <strong>외부 검색 금지</strong> - 실력으로만 푸는 것을 권장합니다</li>
+                    <li>💾 <strong>결과 저장 안내</strong> - 시험 결과는 DB에 저장되지 않으므로, 결과 화면을 직접 캡처해주세요</li>
+                    <li>⏰ <strong>시험 방식</strong> - 총 10문제, 각 문제당 1분 제한시간</li>
+                    <li>📊 <strong>채점 방식</strong> - 문제당 10점, 총 100점 만점</li>
+                    <li>📝 <strong>문제 유형</strong> - 모든 문제는 5지선다형입니다</li>
+                </ul>
+            </div>
+            <button id="begin-quiz-btn" class="btn primary">시험 시작</button>
+        </div>
+    </div>
+
+    <!-- 퀴즈 화면 -->
+    <div id="quiz-screen" class="screen">
+        <div class="container">
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-number">1/10</span>
+                    <span id="timer">01:00</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h3 id="question-text"></h3>
+                <div id="options-container" class="options">
+                    <!-- 선택지들이 동적으로 생성됩니다 -->
+                </div>
+            </div>
+            
+            <button id="next-question-btn" class="btn secondary" disabled>다음 문제</button>
+        </div>
+    </div>
+
+    <!-- 결과 화면 -->
+    <div id="result-screen" class="screen">
+        <div class="container">
+            <h2>시험 결과</h2>
+            <div class="result-container">
+                <div class="score-display">
+                    <span id="final-score">0</span>점 / 100점
+                </div>
+                <div id="result-message" class="result-message"></div>
+                <div class="result-stats">
+                    <p>정답: <span id="correct-count">0</span>개</p>
+                    <p>오답: <span id="wrong-count">0</span>개</p>
+                </div>
+            </div>
+            <button id="view-answers-btn" class="btn primary">정답 및 해설 보기</button>
+            <button id="retry-btn" class="btn secondary">다시 도전하기</button>
+        </div>
+    </div>
+
+    <!-- 정답 및 해설 화면 -->
+    <div id="answers-screen" class="screen">
+        <div class="container">
+            <h2>정답 및 해설</h2>
+            <div id="answers-container" class="answers-container">
+                <!-- 정답과 해설이 동적으로 생성됩니다 -->
+            </div>
+            <button id="back-to-result-btn" class="btn secondary">결과로 돌아가기</button>
+            <button id="restart-btn" class="btn primary">처음부터 다시 시작</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
